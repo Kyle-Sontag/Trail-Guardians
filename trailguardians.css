@@ -1,0 +1,354 @@
+html,body,section,h2,label,body,textarea,
+p,header,nav,footer,div,fieldset,a,label,
+article,aside,ol,ul,li,h1,input,button {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url(images/WaterRocks.jpg) no-repeat center center fixed;
+    background-size: cover;
+	font-family: Verdana, sans-serif;
+    color: var(--black);
+} 
+
+div#everything {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+#notnav{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 75%;
+    height: 100vh;
+    margin-left: 15%;
+}
+
+:root{
+    --navColor: #212013;
+    --navDefault: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    --navHover: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    --black: #000000;
+    --backgroundColour: rgba(75, 128, 188, 0.7);
+    --darkBlue: #003775;
+    --borderDefault: 2px solid var(--darkBlue);
+    --lightBlue: #9cd5f7;
+    --errorColour: #AD0000;
+    --mainTextColour: #d0d5ce;
+    --recycle: #089c08;
+}
+/*---------------------Left Nav Bar---------------------*/
+#nav{
+    background-color:var(--navColor);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 10%;
+    align-items: stretch;
+    position: fixed;
+    width: 15%;
+}
+
+#nav a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 175%;
+    color: var(--black);
+    font-weight: bold;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+}
+
+#nav #home{
+    background: var(--navDefault), url(images/Rock.jpg) no-repeat center/cover;
+}
+
+#nav #about{
+    background: var(--navDefault), url(images/Sky.jpg) no-repeat center/cover;
+}
+
+#nav #contact{
+    background: var(--navDefault), url(images/Plants.jpg) no-repeat center/cover;
+}
+
+#nav #home:hover, #nav #home:focus {
+    background: var(--navHover), url(images/Rock.jpg) no-repeat center/cover;
+}
+#nav #about:hover, #nav #about:focus {
+    background: var(--navHover), url(images/Sky.jpg) no-repeat center/cover;
+}
+#nav #contact:hover, #nav #contact:focus {
+    background: var(--navHover), url(images/Plants.jpg) no-repeat center/cover;
+}
+/*---------------------Ham Nav---------------------*/
+#hamburger{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+#hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: var(--darkBlue);
+    transition: 0.4s;
+}
+
+/*---------------------Main Heading---------------------*/
+#header{
+    background-color: var(--backgroundColour);
+    margin-top: 7.5%;
+    height: 15vh;
+    width: 100%;
+    border-top: 2px solid var(--darkBlue);
+    border-right: 2px solid var(--darkBlue);
+    border-bottom: 2px solid var(--darkBlue);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#header h1{
+    padding: 5%;
+    font-size: 300%;
+}   
+/*---------------------Main Content---------------------*/
+#main{
+    background-color: var(--backgroundColour);
+    border: var(--borderDefault);
+    border-radius: 8px;
+    margin-top: 2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%;
+    padding: 1%;
+}
+
+#main h2{
+    font-size: 200%;
+}
+
+#main p{
+    font-size: 100%;
+    padding: 1%;
+    color: var(--black);
+}
+
+#main .fa-recycle{
+    color: var(--recycle);
+}
+
+#main a{
+    text-decoration: underline;
+    color: var(--darkBlue);
+}
+
+#main a:hover, #main a:focus {
+    font-size: 150%;
+    font-weight: bold;
+}
+/*---------------------Contact Us---------------------*/
+#contactform legend{
+    font-size: 120%;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+#contactform fieldset{
+    border: none;
+}
+
+#contactform .error{
+    color: var(--errorColour);
+    font-weight: bold;
+    display: none;
+}
+
+#volunteerdiv, #traildiv, #donatediv, #otherdiv{
+    display: none;
+    flex-direction: column;
+    padding-top: 2%;
+}
+
+#contactform li{
+    list-style-type: none;
+    padding-left: 2%;
+}
+
+#contactform #textfields{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#contactform #textfields input:hover, 
+#contactform #textfields input:focus {
+    border: var(--borderDefault);
+}
+
+#contactform #radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#contactform #radio label:hover, 
+#contactform #radio label:focus {
+   color: var(--darkBlue);
+}
+
+#contactform #buttons {
+    display: flex;
+    gap: 1%;
+}
+
+#contactform #buttons button{
+    flex: 1;
+    font-size: 125%;
+    color: var(--darkBlue);
+    height: 5vh;
+    cursor: pointer;
+}
+
+#contactform #buttons button:hover, #contactform #buttons button:focus {
+    border: var(--borderDefault);
+}
+/*---------------------Footer---------------------*/
+#footer{
+    background-color: var(--backgroundColour);
+    border: var(--borderDefault);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.25%;
+    font-size: 80%;
+    width: fit-content;
+    padding: 0.25%;
+}
+
+#footer #links{
+    white-space: nowrap;
+    padding-left: 2%;
+    padding-right: 1%;
+}
+
+#footer p{
+    color: var(--black);
+}
+
+#footer a{
+    text-decoration: underline;
+    color: var(--darkBlue);
+
+}
+#footer a:hover, #footer a:focus {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 850px) {
+    #everything {
+        flex-direction: column;
+    }
+
+    #header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+        border-left: 2px solid var(--darkBlue);
+        height: 10vh;
+    }
+
+    #header h1 {
+        font-size: 200%;
+    }
+
+    #nav {
+        position: fixed;
+        top: 0;
+        right: -100%;  
+        width: 80%;
+        height: 100vh;
+        background-color: var(--navColor);
+        z-index: 950;
+        padding-top: 20vh;
+        transition: right 0.3s ease;
+    }
+
+    #nav.active {
+        right: 0;  
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 0;
+        right: -25px;
+        z-index: 1000;
+    }
+
+    #notnav {
+        flex-basis: auto;
+        margin-left: 0;
+        margin-top: 15vh;
+        width: 100%;
+        min-height: 85vh;
+    }
+
+    #main{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    #contactform #textfields {
+        flex-direction: column;
+    }
+
+    #contactform #textfields li {
+        margin-bottom: 15px;
+    }
+
+    #contactform #textfields label {
+        margin-bottom: 5px;
+    }
+
+    #contactform #textfields input{
+        margin-left: 20px;
+        max-width: 300px;
+    }
+
+    #contactform #radio {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2%;
+    }
+
+    #contactform #radio li {
+        margin-bottom: 10px;
+    }
+
+    #footer {
+        width: 90%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="trailguardians.css">
+    <script src="trailguardians.js"></script>
+</head>
+<body>
+    <div id="everything">
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <a id="home" href="index.html">Home</a>
+            <a id="about" href="aboutus.html">About Us</a>
+            <a id="contact" href="contactus.html">Contact Us</a>
+        </nav>
+        <div id="notnav">
+            <header id="header">
+                <h1>Trail Guardians</h1>
+            </header>
+            <main id="main">
+                <form id="contactform" action="index.html" method="post">
+                    <h2>Contact Us!</h2>
+                    <fieldset>
+                        <legend>Your Information</legend>
+                        <ul id="textfields">
+                            <li>
+                                <label for="fullname">Full Name: </label>
+                                <input id="fullname" name="fullname" type="text" placeholder="John Doe"/>
+                                <p class="infoError error" id="fullnameReq_error">* Required field</p>
+                            </li>
+                            <li>
+                                <label for="email">Email: </label>
+                                <input id="email" name="email" type="text" placeholder="JohnD123@gmail.com"/>
+                                <p class="infoError error" id="emailReq_error">* Required field</p>
+                                <p class="infoError error" id="emailFormat_error">* Invalid email address</p>
+                            </li>
+                            <li>
+                                <label for="phoneNumber">Phone Number: </label>
+                                <input id="phoneNumber" name="phoneNumber" type="number" placeholder="2042042004"/>
+                                <p class="infoError error" id="phoneNumberReq_error">* Required field</p>
+                                <p class="infoError error" id="phoneNumberFormat_error">* Invalid phone number</p>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <br><br>
+                    <fieldset>
+                        <legend>Reason for contacting</legend>
+                        <ul id="radio">
+                            <li>
+                                <input type="radio" name="reason" id="volunteer" value="Volunteering" /> 
+                                <label for="volunteer">Volunteering</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="reason" id="donate" value="Donation" /> 
+                                <label for="donate">Donation</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="reason" id="trail" value="Trail" /> 
+                                <label for="trail">Trail</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="reason" id="other" value="Other" />
+                                <label for="other">Other</label>
+                            </li>
+                        </ul>
+
+                        <div class="error" id="reason_error">* Please choose your reason for contacting us.</div>
+
+                        <div id="volunteerdiv" class="formfield">
+                            <label for="join" class="moreinfo">Why do you want to volunteer:</label>
+                            <textarea id="join" name="join" rows="5" cols="30" ></textarea>
+                        </div>
+
+                        <div id="donatediv" class="formfield">
+                            <label for="donates" class="moreinfo">What do you want to donate:</label>
+                            <textarea id="donates" name="donates" rows="5" cols="30" ></textarea>
+                        </div>
+
+                        <div id="traildiv" class="formfield">
+                            <label for="trails" class="moreinfo">Tell us about the trail:</label>
+                            <textarea id="trails" name="trails" rows="5" cols="30" ></textarea>
+                        </div>
+
+                        <div id="otherdiv" class="formfield">
+                            <label for="otherinput" class="moreinfo">Explain your reason for contacting us:</label>
+                            <textarea id="otherinput" name="otherinput" rows="5" cols="30" ></textarea>
+                        </div>
+
+                        <div class="error" id="reasonText_error">* Please explain why.</div>
+
+                    </fieldset>
+                    <br><br>
+                    <fieldset id="buttons">
+                        <button type="submit" >Submit</button>
+                        <button type="reset" >Clear</button>
+                    </fieldset>
+                </form>
+            </main>
+            <footer id="footer">
+                <div id="location">
+                    <p>Based out of Winnipeg Manitoba</p>
+                </div>  
+                <div id="photos">
+                    <p>All photos have been provided by volunteers on our team</p>
+                </div>
+                <div id="links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="contactus.html">Contact Us</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
