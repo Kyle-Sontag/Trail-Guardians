@@ -7,7 +7,7 @@ article,aside,ol,ul,li,h1,input,button {
 }
 
 body {
-	background: url(images/WaterRocks.jpg) no-repeat center center fixed;
+	background: url(Images/WaterRocks.jpg) no-repeat center center fixed;
     background-size: cover;
 	font-family: Verdana, sans-serif;
     color: var(--black);
@@ -64,25 +64,25 @@ div#everything {
 }
 
 #nav #home{
-    background: var(--navDefault), url(images/Rock.jpg) no-repeat center/cover;
+    background: var(--navDefault), url(Images/Rock.jpg) no-repeat center/cover;
 }
 
 #nav #about{
-    background: var(--navDefault), url(images/Sky.jpg) no-repeat center/cover;
+    background: var(--navDefault), url(Images/Sky.jpg) no-repeat center/cover;
 }
 
 #nav #contact{
-    background: var(--navDefault), url(images/Plants.jpg) no-repeat center/cover;
+    background: var(--navDefault), url(Images/Plants.jpg) no-repeat center/cover;
 }
 
 #nav #home:hover, #nav #home:focus {
-    background: var(--navHover), url(images/Rock.jpg) no-repeat center/cover;
+    background: var(--navHover), url(Images/Rock.jpg) no-repeat center/cover;
 }
 #nav #about:hover, #nav #about:focus {
-    background: var(--navHover), url(images/Sky.jpg) no-repeat center/cover;
+    background: var(--navHover), url(Images/Sky.jpg) no-repeat center/cover;
 }
 #nav #contact:hover, #nav #contact:focus {
-    background: var(--navHover), url(images/Plants.jpg) no-repeat center/cover;
+    background: var(--navHover), url(Images/Plants.jpg) no-repeat center/cover;
 }
 /*---------------------Ham Nav---------------------*/
 #hamburger{
