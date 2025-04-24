@@ -1,23 +1,32 @@
+/********f************
+    
+    Project 4 Stylesheet
+    Name: Kyle Sontag
+    Date: 2025-04-24
+    Description: CSS for project 4 - Trail Guardians
+
+*********************/
 html,body,section,h2,label,body,textarea,
 p,header,nav,footer,div,fieldset,a,label,
 article,aside,ol,ul,li,h1,input,button {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
+}/*Reset for default browser styles*/
 
 body {
 	background: url(Images/WaterRocks.jpg) no-repeat center center fixed;
     background-size: cover;
 	font-family: Verdana, sans-serif;
     color: var(--black);
-} 
+}/*Sets background and font style for page*/ 
 
 div#everything {
     width: 100%;
     margin: 0 auto;
     display: flex;
-}
+    min-width: 330px;
+}/*Creates container for page*/
 
 #notnav{
     display: flex;
@@ -25,21 +34,21 @@ div#everything {
     flex-basis: 75%;
     height: 100vh;
     margin-left: 15%;
-}
+}/*Structures content excluding nav*/
 
 :root{
     --navColor: #212013;
-    --navDefault: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    --navHover: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-    --black: #000000;
-    --backgroundColour: rgba(75, 128, 188, 0.7);
+    --black: #0C141D;
+    --blueWhite: #B0C4D1;
     --darkBlue: #003775;
-    --borderDefault: 2px solid var(--darkBlue);
-    --lightBlue: #9cd5f7;
     --errorColour: #AD0000;
-    --mainTextColour: #d0d5ce;
-    --recycle: #089c08;
-}
+    --polaroidColour: #3996ff;
+    --navDefault: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /*Opaque links*/
+    --navHover: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); /*Clear links*/
+    --shadowHover: 1px 1px var(--darkBlue);
+    --backgroundColour: rgba(75, 128, 188, 0.7); /*Semi transparent background*/
+    --borderDefault: 2px solid var(--darkBlue);
+}/*Defined CSS variables*/
 /*---------------------Left Nav Bar---------------------*/
 #nav{
     background-color:var(--navColor);
@@ -50,7 +59,7 @@ div#everything {
     align-items: stretch;
     position: fixed;
     width: 15%;
-}
+}/*Creates left Nav with menu items in column*/
 
 #nav a{
     text-decoration: none;
@@ -83,7 +92,7 @@ div#everything {
 }
 #nav #contact:hover, #nav #contact:focus {
     background: var(--navHover), url(Images/Plants.jpg) no-repeat center/cover;
-}
+}/*From here to last comment, styles the links in the nav bar*/
 /*---------------------Ham Nav---------------------*/
 #hamburger{
     display: none;
@@ -92,7 +101,7 @@ div#everything {
     right: 20px;
     z-index: 1000;
     padding: 10px;
-}
+}/*Creates styles and hides hamburger for later use*/
 
 #hamburger span {
     display: block;
@@ -101,7 +110,7 @@ div#everything {
     margin: 6px 0;
     background-color: var(--darkBlue);
     transition: 0.4s;
-}
+}/*Creates styles and hides hamburger for later use*/
 
 /*---------------------Main Heading---------------------*/
 #header{
@@ -116,12 +125,12 @@ div#everything {
     border-bottom-right-radius: 8px;
     display: flex;
     align-items: center;
-}
+}/*Creates styling for page header*/
 
 #header h1{
     padding: 5%;
     font-size: 300%;
-}   
+}/*Styles header text*/   
 /*---------------------Main Content---------------------*/
 #main{
     background-color: var(--backgroundColour);
@@ -132,31 +141,53 @@ div#everything {
     margin-right: 2.5%;
     margin-bottom: 2.5%;
     padding: 1%;
-}
+}/*Styles the area for body text*/
 
 #main h2{
     font-size: 200%;
-}
+}/*Text size for body headings*/
 
 #main p{
     font-size: 100%;
     padding: 1%;
     color: var(--black);
-}
-
-#main .fa-recycle{
-    color: var(--recycle);
-}
+}/*Styles body text*/
 
 #main a{
     text-decoration: underline;
     color: var(--darkBlue);
-}
+}/*Styles body links*/
 
 #main a:hover, #main a:focus {
-    font-size: 150%;
-    font-weight: bold;
-}
+    color: var(--blueWhite);
+    text-shadow: var(--shadowHover);
+}/*Styles body hover/focus*/
+
+#main #falcon{
+    width: 50%;
+    max-width: 600px;
+    margin: 1% auto;
+    background-color: var(--blueWhite);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}/*Sets container size for photo*/
+
+#main #falcon img {
+    width: 100%;
+    display: block;
+}/*Photo size*/
+
+#main #polaroid{
+    text-align: center;
+    padding: 10px 20px;
+}/*Text style*/
+
+#main #polaroid a:hover,
+#main #polaroid a:focus{
+    text-shadow: none;
+    color: var(--polaroidColour);
+}/*Sets focus and hover properties for polaroid link*/
+
 /*---------------------Contact Us---------------------*/
 #contactform legend{
     font-size: 120%;
@@ -164,55 +195,67 @@ div#everything {
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 1%;
-}
+}/*Styles contact sections*/
 
 #contactform fieldset{
     border: none;
-}
+}/*Removes body internal border from fieldset*/
 
 #contactform .error{
     color: var(--errorColour);
     font-weight: bold;
     display: none;
-}
+}/*Styles errors*/
 
 #volunteerdiv, #traildiv, #donatediv, #otherdiv{
     display: none;
     flex-direction: column;
     padding-top: 2%;
-}
+}/*Styles textarea*/
 
 #contactform li{
     list-style-type: none;
     padding-left: 2%;
-}
+}/*Styles list items in contactform*/
 
 #contactform #textfields{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
+}/*Styles text input in contactform*/
+
+#contactform label:hover,
+#contactform label:focus{
+    color: var(--blueWhite);
+    text-shadow: var(--shadowHover);
+}/*Controls lable hover/focus*/
 
 #contactform #textfields input:hover, 
 #contactform #textfields input:focus {
     border: var(--borderDefault);
-}
+}/*Controls text input hover/focus*/
 
 #contactform #radio{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
+}/*Styles radio buttons*/
 
 #contactform #radio label:hover, 
 #contactform #radio label:focus {
-   color: var(--darkBlue);
-}
+   color: var(--blueWhite);
+   text-shadow: 2px 2px var(--darkBlue);
+}/*Hover/focus for radio button label*/
+
+#contactform textarea:hover,
+#contactform textarea:focus{
+    border: var(--borderDefault)
+}/*Hover/focus for textarea*/
 
 #contactform #buttons {
     display: flex;
     gap: 1%;
-}
+}/*Create structure clear and submit buttons*/
 
 #contactform #buttons button{
     flex: 1;
@@ -220,11 +263,14 @@ div#everything {
     color: var(--darkBlue);
     height: 5vh;
     cursor: pointer;
-}
+}/*Styles clear and submit buttons*/
 
-#contactform #buttons button:hover, #contactform #buttons button:focus {
+#contactform #buttons button:hover, 
+#contactform #buttons button:focus {
+    background-color: var(--darkBlue);
+    color: var(--blueWhite);
     border: var(--borderDefault);
-}
+}/*Hover/focus for clear and submit*/
 /*---------------------Footer---------------------*/
 #footer{
     background-color: var(--backgroundColour);
@@ -240,33 +286,30 @@ div#everything {
     font-size: 80%;
     width: fit-content;
     padding: 0.25%;
-}
+}/*Styles space for footer*/
 
 #footer #links{
     white-space: nowrap;
     padding-left: 2%;
     padding-right: 1%;
-}
+}/*Rules for footer links*/
 
 #footer p{
     color: var(--black);
-}
+}/*Styles footer text */
 
 #footer a{
     text-decoration: underline;
     color: var(--darkBlue);
+}/*Styles for footer links*/
 
-}
 #footer a:hover, #footer a:focus {
-    font-size: 130%;
-    font-weight: bold;
-}
+    color: var(--blueWhite);
+    text-shadow: var(--shadowHover);
+}/*Hover/focus for footer links*/
 
-@media screen and (max-width: 850px) {
-    #everything {
-        flex-direction: column;
-    }
-
+@media screen and (min-width: 330px) and (max-width: 850px) {
+    /*New display settings starting at 850px max with min of 330px*/
     #header {
         position: absolute;
         top: 0;
@@ -276,11 +319,11 @@ div#everything {
         border-radius: 0;
         border-left: 2px solid var(--darkBlue);
         height: 10vh;
-    }
+    }/*Edits header display for smaller screen*/
 
     #header h1 {
         font-size: 200%;
-    }
+    }/*Adjusts title size for smaller screens*/
 
     #nav {
         position: fixed;
@@ -292,11 +335,11 @@ div#everything {
         z-index: 950;
         padding-top: 20vh;
         transition: right 0.3s ease;
-    }
+    }/*Edits nav settings, starts off screen*/
 
     #nav.active {
         right: 0;  
-    }
+    }/*When nav is active comes into view*/
 
     #hamburger {
         display: block;
@@ -305,7 +348,7 @@ div#everything {
         top: 0;
         right: -25px;
         z-index: 1000;
-    }
+    }/*Activator for nav, fixed top right of screen partially out of view*/
 
     #notnav {
         flex-basis: auto;
@@ -313,42 +356,46 @@ div#everything {
         margin-top: 15vh;
         width: 100%;
         min-height: 85vh;
-    }
+    }/*New settings for all content that isnt nav*/
 
     #main{
         padding-left: 2%;
         padding-right: 2%;
-    }
+    }/*Adjusts padding*/
+
+    #main #falcon{
+        width: 80%;
+    }/*Allows photo to take more screen space*/
 
     #contactform #textfields {
         flex-direction: column;
-    }
+    }/*Adjusts textfields*/
 
     #contactform #textfields li {
         margin-bottom: 15px;
-    }
+    }/*Creates some spacing between lines for text inputs*/
 
     #contactform #textfields label {
         margin-bottom: 5px;
-    }
+    }/*Creates some space underneath text label*/
 
     #contactform #textfields input{
         margin-left: 20px;
         max-width: 300px;
-    }
+    }/*New styles for text input*/
 
     #contactform #radio {
         flex-direction: column;
         align-items: flex-start;
         padding-left: 2%;
-    }
+    }/*Styles to reorganize radio buttons*/
 
     #contactform #radio li {
         margin-bottom: 10px;
-    }
+    }/*Space between radio buttons*/
 
     #footer {
         width: 90%;
         text-align: center;
-    }
+    }/*Adjusts footer style*/
 }

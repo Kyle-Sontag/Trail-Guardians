@@ -1,3 +1,11 @@
+/********f************
+    
+    Project 4 Stylesheet
+    Name: Kyle Sontag
+    Date: 2025-04-24
+    Description: JS for project 4 - Trail Guardians
+
+*********************/
 function validate(e) {
     e.preventDefault(); 
     hideAllErrors();
@@ -8,7 +16,7 @@ function validate(e) {
         document.getElementById("contactform").submit();
         return true;
     }
-}
+}//Prevents form submission if errors are present 
 
 function resetForm(e) {
     if(confirm('Clear survey?')) {
@@ -22,14 +30,14 @@ function resetForm(e) {
     }
     e.preventDefault();
     return false;
-}
+}//Confirms if user is wanting to reset form before resetting
 
 function hideAllErrors() {
     let errorFields = document.getElementsByClassName("error");
     for(let i=0; i<errorFields.length; i++) {
         errorFields[i].style.display = "none";
     }
-}
+}//Hides error messages, sets display to none
 
 function hideReason() {
     const divIds = ["volunteerdiv", "donatediv", "traildiv", "otherdiv"];
@@ -39,21 +47,21 @@ function hideReason() {
             div.style.display = "none";
         }
     });
-}
+}//Hides textareas for radio buttons
 
 function formFieldHasInput(fieldElement) {
     if(fieldElement == null || fieldElement.value == null || fieldElement.value.trim() === "") {
         return false;
     }
     return true;
-}
+}//Checks if a field has characters inputted
 
 function showError(errorId) {
     const errorElement = document.getElementById(errorId);
     if(errorElement) {
         errorElement.style.display = "block";
     }
-}
+}//Makes error message visible
 
 function formHasErrors() {
     let errorFlag = false;
@@ -70,7 +78,7 @@ function formHasErrors() {
             }
             errorFlag = true;
         }
-    }
+    }//Check if required fields have input
 
     const emailElement = document.getElementById("email");
     if(emailElement) {
@@ -84,7 +92,7 @@ function formHasErrors() {
             }
             errorFlag = true;
         }
-    }
+    }//Uses regex to validate email
 
     const phoneElement = document.getElementById("phoneNumber");
     if(phoneElement) {
@@ -98,7 +106,7 @@ function formHasErrors() {
             }
             errorFlag = true;
         }
-    }
+    }//Uses regex to validate phone number
 
     let reason = ["volunteer", "donate", "trail", "other"];
     let reasonChecked = false;
@@ -111,7 +119,7 @@ function formHasErrors() {
             selectedReason = reason[i];
             break;
         }
-    }
+    }//Determines if a radio button has been selected
     
     if(!reasonChecked) {
         showError("reason_error");
@@ -130,10 +138,10 @@ function formHasErrors() {
                 errorFlag = true;
             }
         }
-    }
+    }//Confirms that the textarea corresponding to the radio button has content
 
     return errorFlag;
-}
+}//Validates form returning error message when needed
 
 function handleHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
@@ -145,7 +153,7 @@ function handleHamburgerMenu() {
             nav.classList.toggle('active');
         });
     }
-}
+}//Creates functionality for the 'hamburger' nav
 
 function load() {
     const form = document.getElementById("contactform");
@@ -171,7 +179,7 @@ function load() {
         hideReason();
     }
     handleHamburgerMenu();
-}
+}//Initializes the page setting up event listeners and start states
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", load);
