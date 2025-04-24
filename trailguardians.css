@@ -14,6 +14,10 @@ article,aside,ol,ul,li,h1,input,button {
 	box-sizing: border-box;
 }/*Reset for default browser styles*/
 
+html{
+    min-width: 330px;
+}
+
 body {
 	background: url(Images/WaterRocks.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -25,7 +29,6 @@ div#everything {
     width: 100%;
     margin: 0 auto;
     display: flex;
-    min-width: 330px;
 }/*Creates container for page*/
 
 #notnav{
@@ -308,8 +311,8 @@ div#everything {
     text-shadow: var(--shadowHover);
 }/*Hover/focus for footer links*/
 
-@media screen and (min-width: 330px) and (max-width: 850px) {
-    /*New display settings starting at 850px max with min of 330px*/
+@media screen and (max-width: 850px) {
+    /*New display settings starting at 850px*/
     #header {
         position: absolute;
         top: 0;
@@ -346,7 +349,7 @@ div#everything {
         cursor: pointer;
         position: fixed;
         top: 0;
-        right: -25px;
+        right: -15px;
         z-index: 1000;
     }/*Activator for nav, fixed top right of screen partially out of view*/
 
